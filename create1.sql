@@ -60,7 +60,7 @@ CREATE TABLE Class (
 
 DROP TABLE IF EXISTS Player;
 CREATE TABLE Player (
-    playerID INTEGER CONSTRAINT playerPK PRIMARY KEY,
+    playerID INTEGER CONSTRAINT playerPK PRIMARY KEY CONSTRAINT uniquePlayer CHECK (playerID = 1),
     name TEXT CONSTRAINT playerNameExists NOT NULL,
     money INTEGER CONSTRAINT moneyPositive CHECK (money >= 0),
     XP INTEGER CONSTRAINT playerXPPositive CHECK (XP >= 0),
@@ -82,12 +82,13 @@ CREATE TABLE Loot (
 DROP TABLE IF EXISTS Effect;
 CREATE TABLE Effect (
     effectID INTEGER CONSTRAINT effectPK PRIMARY KEY,
-    cp_ADD INTEGER CONSTRAINT cpAddNonZero CHECK (cp_ADD != 0),
-    dp_ADD INTEGER CONSTRAINT dpAddNonZero CHECK (dp_ADD != 0),
-    hp_ADD INTEGER CONSTRAINT hpAddNonZero CHECK (hp_ADD != 0),
+    cp_ADD INTEGER,
+    dp_ADD INTEGER,
+    hp_ADD INTEGER,
     duration INTEGER CONSTRAINT durationPositive CHECK (duration >= 0),
     onPlayer INTEGER,
     onMonster INTEGER,
+    CONSTRAINT addNonZero CHECK (cp_ADD != 0 OR dp_ADD != 0 OR hp_ADD != 0),
     FOREIGN KEY(onPlayer) REFERENCES Player(playerID) ON UPDATE CASCADE ON DELETE SET NULL,
     FOREIGN KEY(onMonster) REFERENCES Monster(monsterID) ON UPDATE CASCADE ON DELETE SET NULL
 );
