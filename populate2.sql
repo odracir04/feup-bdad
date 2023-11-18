@@ -86,7 +86,7 @@ INSERT INTO Class (name, HP, CP, DP, proficiencies) VALUES
 
 -- Populate the Player table
 INSERT INTO Player (name, money, XP, class, inRoom) VALUES
-('Michel', 5000000000, 0, 8, 1);
+('Player', 150, 300, 8, 1);
 
 INSERT INTO Loot (name, value) VALUES
 ('Gold Coin', 50),
