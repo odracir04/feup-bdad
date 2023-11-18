@@ -26,39 +26,52 @@ INSERT INTO Room (roomID, name) VALUES
 (19, 'Emerald Vale'),
 (20, 'Starlight Citadel');
 
--- Populate the StartRoom table
 INSERT INTO StartRoom (roomID) VALUES (1);
 
--- Populate the Arena table
 INSERT INTO Arena (roomID) VALUES
 (2), (3), (9), (8), (10), (11), (12), (13), (15), (17);
 
-
--- Populate the Shop table
 INSERT INTO Shop (roomID) VALUES
 (4), (5), (7), (6), (14), (16), (18), (19), (20);
 
-
--- Populate the Monster table with unique names
 INSERT INTO Monster (name, HP, CP, DP, XPgiven, inArena) VALUES
-('Eldritch Horror', 150, 20, 10, 100, 3),
+('Eldritch Horror', 150, 20, 10, 100, 2),
 ('Fire-breathing Drake', 180, 25, 12, 120, 2),
-('Spectral Wraith', 120, 15, 8, 80, 8),
-('Goblin King', 200, 30, 15, 140, 9),
+('Spectral Wraith', 120, 15, 8, 80, 2),
+('Goblin King', 200, 30, 15, 140, 3),
 ('Shadow Stalker', 140, 22, 11, 90, 3),
-('Venomous Serpent', 160, 18, 9, 110, 9),
+('Venomous Serpent', 160, 18, 9, 110, 3),
 ('Ancient Lich', 220, 26, 13, 150, 8),
-('Gargoyle Guardian', 200, 28, 14, 140, 2),
+('Gargoyle Guardian', 200, 28, 14, 140, 8),
 ('Grumpy Troll', 180, 14, 7, 120, 8),
-('Vicious Minotaur', 190, 23, 11, 130, 10),
-('Frostbite Yeti', 170, 21, 10, 115, 15),
-('Blazing Phoenix', 200, 27, 14, 145, 17),
-('Dark Sorcerer', 210, 29, 15, 155, 13),
-('The Kraken', 220, 24, 13, 160, 2),
-('Thunderous Behemoth', 230, 32, 16, 170, 11),
-('Mystic Unicorn', 180, 19, 9, 125, 12);
+('Vicious Minotaur', 190, 23, 11, 130, 9),
+('Frostbite Yeti', 170, 21, 10, 115, 9),
+('Blazing Phoenix', 200, 27, 14, 145, 9),
+('Dark Sorcerer', 210, 29, 15, 155, 10),
+('The Kraken', 220, 24, 13, 160, 10),
+('Thunderous Behemoth', 230, 32, 16, 170, 10),
+('Mystic Unicorn', 180, 19, 9, 125, 11),
+('Dread Reaper', 240, 35, 18, 180, 11),
+('Crimson Wyvern', 260, 30, 20, 200, 11),
+('Basilisk King', 280, 38, 22, 220, 12),
+('Haunted Specter', 200, 25, 12, 150, 12),
+('Savage Chimera', 300, 40, 25, 250, 12),
+('Ethereal Banshee', 220, 28, 15, 160, 13),
+('Cursed Mummy', 260, 32, 17, 190, 13),
+('Hellfire Demon', 280, 36, 19, 210, 13),
+('Nightshade Hydra', 320, 45, 28, 270, 15),
+('Wicked Warlock', 240, 30, 16, 170, 15),
+('Enigmatic Sphinx', 300, 42, 24, 230, 15),
+('Ravenous Werewolf', 260, 34, 18, 200, 17),
+('Frostbite Golem', 280, 38, 20, 220, 17),
+('Thunderclap Dragon', 340, 50, 30, 290, 17),
+('Abyssal Leviathan', 360, 55, 32, 310, 17),
+('Eclipse Serpent', 320, 40, 22, 240, 15),
+('Necrotic Revenant', 280, 36, 19, 210, 13),
+('Doomsday Titan', 380, 60, 35, 330, 12),
+('Chaos Elemental', 300, 45, 25, 250, 11),
+('Molten Phoenix', 340, 48, 28, 280, 10);
 
--- Populate the Shopkeeper table with intriguing names
 INSERT INTO Shopkeeper (name, inShop) VALUES
 ('Zarok the Enchanter', 4),
 ('Sylva the Mysterious', 5),
@@ -70,8 +83,6 @@ INSERT INTO Shopkeeper (name, inShop) VALUES
 ('Rune the Mystic', 19),
 ('Aldor the Blacksmith', 20);
 
-
--- Populate the Class table
 INSERT INTO Class (name, HP, CP, DP, proficiencies) VALUES
 ('Warrior', 150, 30, 15, 'Sword, Shield'),
 ('Mage', 100, 40, 10, 'Staff, Wand'),
@@ -84,7 +95,6 @@ INSERT INTO Class (name, HP, CP, DP, proficiencies) VALUES
 ('Druid', 130, 24, 13, 'Staff, Healing'),
 ('Bard', 120, 26, 12, 'Instrument, Charm');
 
--- Populate the Player table
 INSERT INTO Player (name, money, XP, class, inRoom) VALUES
 ('Player', 150, 300, 8, 1);
 
@@ -120,7 +130,6 @@ INSERT INTO Loot (name, value) VALUES
 ('Silvered Blade', 138),
 ('Lost Reliquary', 148);
 
--- Populate the Effect table
 INSERT INTO Effect (cp_ADD, dp_ADD, hp_ADD, duration, onPlayer, onMonster) VALUES
 (5, 5, -10, 3, 1, NULL),
 (10, 10, 10, 5, NULL, NULL),
@@ -133,14 +142,12 @@ INSERT INTO Effect (cp_ADD, dp_ADD, hp_ADD, duration, onPlayer, onMonster) VALUE
 (9, 9, 9, 5, NULL, NULL),
 (11, 11, 11, 6, NULL, NULL);
 
--- Populate the Weapon table
 INSERT INTO Weapon (lootID, durability, weaponType, attackType, cp_ADD, effect) VALUES
 (23, 100, 'Rod', 'Thunderbolt', 5, 1),
 (24, 100, 'Fang', 'Venomous', 7, 2),
 (26, 100, 'Knife', 'Sharp', 13, 4),
 (30, 100, 'Blade', 'Silvered', 20, 8);
 
--- Populate the Armor table
 INSERT INTO Armor (lootID, durability, dp_ADD) VALUES
 (7, 100, 12),   -- Silver Locket (lootID 7)
 (12, 100, 8),   -- Platinum Bracelet (lootID 12)
@@ -154,13 +161,10 @@ INSERT INTO Armor (lootID, durability, dp_ADD) VALUES
 (28, 100, 14),  -- Starlight Pendant (lootID 28)
 (21, 100, 5);   -- Crimson Scarf (lootID 21)
 
-
--- Populate the Potion table
 INSERT INTO Potion (lootID, durability, effect) VALUES
 (11, 1, 5),
 (13, 1, 8);
 
--- Populate the Treasure table
 INSERT INTO Treasure (lootID) VALUES
 (2),  -- Shiny Gem (lootID 2)
 (4),  -- Mystic Scroll (lootID 4)
@@ -178,7 +182,6 @@ INSERT INTO Treasure (lootID) VALUES
 (20), -- Elven Artefact (lootID 20)
 (30); -- Lost Reliquary (lootID 30)
 
-
 INSERT INTO Chest (isInteractable, hasLoot, inRoom) VALUES
 (TRUE, TRUE, 1),
 (TRUE, TRUE, 2),
@@ -191,7 +194,6 @@ INSERT INTO Chest (isInteractable, hasLoot, inRoom) VALUES
 (TRUE, TRUE, 9),
 (TRUE, TRUE, 10);
 
--- Populate the Decor table
 INSERT INTO Decor (isInteractable, hasLoot, inRoom) VALUES
 (TRUE, FALSE, 1),
 (TRUE, FALSE, 2),
@@ -204,7 +206,6 @@ INSERT INTO Decor (isInteractable, hasLoot, inRoom) VALUES
 (TRUE, FALSE, 9),
 (TRUE, FALSE, 10);
 
--- Populate the Door table
 INSERT INTO Door (isInteractable, hasLoot, inRoom, toRoom) VALUES
 (1, 0, 1, 5),   -- The Enchanted Forest -> Mystic Grove
 (1, 0, 1, 20),  -- The Enchanted Forest -> Starlight Citadel
@@ -230,8 +231,7 @@ INSERT INTO Door (isInteractable, hasLoot, inRoom, toRoom) VALUES
 (1, 0, 18, 9),  -- Aurora Falls -> Lost Temple
 (1, 0, 19, 3);  -- Emerald Vale -> Cursed Crypt
 
--- Populate the InChest table
-INSERT INTO InChest (loot, chest)
+INSERT INTO InChest (lootID, chest)
 VALUES 
 (1, 3),  -- 'Gold Coin'
 (2, 1),  -- 'Shiny Gem'
@@ -255,8 +255,7 @@ VALUES
 (20, 6), -- 'Elven Artefact'
 (21, 1); -- 'Crimson Scarf'
 
--- Populate the InShop table
-INSERT INTO InShop (loot, shop)
+INSERT INTO InShop (lootID, shop)
 VALUES
 (22, 4), -- 'Frosty Crown'
 (23, 6), -- 'Thunderbolt Rod'
@@ -266,8 +265,7 @@ VALUES
 (27, 14), -- 'Phoenix Feather'
 (28, 7); -- 'Starlight Pendant'
 
--- Populate the InPlayerInventory table
-INSERT INTO InPlayerInventory (loot, player)
+INSERT INTO InPlayerInventory (lootID, player)
 VALUES
-(29, 1),
-(30, 1);
+(29, 1), -- 'Silvered Blade'
+(30, 1); -- 'Lost Reliquary'

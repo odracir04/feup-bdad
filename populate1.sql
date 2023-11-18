@@ -14,20 +14,15 @@ INSERT INTO Room (roomID, name) VALUES
 (9, 'Lost Temple'),
 (10, 'Crystal Cavern');
 
--- Populate the StartRoom table
 INSERT INTO StartRoom (roomID) VALUES (1);
 
--- Populate the Arena table
 INSERT INTO Arena (roomID) VALUES
 (2), (3), (9), (8), (10); 
 
 
--- Populate the Shop table
 INSERT INTO Shop (roomID) VALUES
 (4), (5), (7), (6);
 
-
--- Populate the Monster table with unique names
 INSERT INTO Monster (name, HP, CP, DP, XPgiven, inArena) VALUES
 ('Eldritch Horror', 150, 20, 10, 100, 3),
 ('Fire-breathing Drake', 180, 25, 12, 120, 2),
@@ -40,14 +35,12 @@ INSERT INTO Monster (name, HP, CP, DP, XPgiven, inArena) VALUES
 ('Grumpy Troll', 180, 14, 7, 120, 8),
 ('The Kraken', 220, 24, 13, 160, 2);
 
--- Populate the Shopkeeper table with intriguing names
 INSERT INTO Shopkeeper (name, inShop) VALUES
 ('Zarok the Enchanter', 4),
 ('Sylva the Mysterious', 5),
 ('Bartleby the Bargainer', 7),
 ('Grimm the Collector', 6);
 
--- Populate the Class table
 INSERT INTO Class (name, HP, CP, DP, proficiencies) VALUES
 ('Warrior', 150, 30, 15, 'Sword, Shield'),
 ('Mage', 100, 40, 10, 'Staff, Wand'),
@@ -60,9 +53,8 @@ INSERT INTO Class (name, HP, CP, DP, proficiencies) VALUES
 ('Druid', 130, 24, 13, 'Staff, Healing'),
 ('Bard', 120, 26, 12, 'Instrument, Charm');
 
--- Populate the Player table
 INSERT INTO Player (name, money, XP, class, inRoom) VALUES
-('Herói de LDTS', 500, 100, 1, 1);
+('Player', 500, 100, 1, 1);
 
 INSERT INTO Loot (name, value) VALUES
 ('Loot 1', 50),
@@ -76,7 +68,6 @@ INSERT INTO Loot (name, value) VALUES
 ('Loot 9', 130),
 ('Loot 10', 140);
 
--- Populate the Effect table
 INSERT INTO Effect (cp_ADD, dp_ADD, hp_ADD, duration, onPlayer, onMonster) VALUES
 (5, 5, -10, 3, 1, NULL),
 (10, 10, 10, 5, NULL, NULL),
@@ -89,26 +80,21 @@ INSERT INTO Effect (cp_ADD, dp_ADD, hp_ADD, duration, onPlayer, onMonster) VALUE
 (9, 9, 9, 5, NULL, NULL),
 (11, 11, 11, 6, NULL, NULL);
 
--- Populate the Weapon table
 INSERT INTO Weapon (lootID, durability, weaponType, attackType, cp_ADD, effect) VALUES
 (1, 50, 'Sword', 'Melee', 10, 1),
 (2, 60, 'Staff', 'Magic', 15, 2),
 (8, 120, 'Lockpick', 'Utility', 6, 8),
 (10, 140, 'Sword', 'Melee', 11, 10);
 
--- Populate the Armor table
 INSERT INTO Armor (lootID, durability, dp_ADD) VALUES
 (3, 50, 10),
 (5, 60, 15),
 (6, 120, 6);
 
-
--- Populate the Potion table
 INSERT INTO Potion (lootID, durability, effect) VALUES
 (4, 1, 5),
 (7, 1, 9);
 
--- Populate the Treasure table
 INSERT INTO Treasure (lootID) VALUES (9);
 
 INSERT INTO Chest (isInteractable, hasLoot, inRoom) VALUES
@@ -123,7 +109,6 @@ INSERT INTO Chest (isInteractable, hasLoot, inRoom) VALUES
 (TRUE, TRUE, 9),
 (TRUE, TRUE, 10);
 
--- Populate the Decor table
 INSERT INTO Decor (isInteractable, hasLoot, inRoom) VALUES
 (TRUE, FALSE, 1),
 (TRUE, FALSE, 2),
@@ -136,7 +121,6 @@ INSERT INTO Decor (isInteractable, hasLoot, inRoom) VALUES
 (TRUE, FALSE, 9),
 (TRUE, FALSE, 10);
 
--- Populate the Door table
 INSERT INTO Door (isInteractable, hasLoot, inRoom, toRoom) VALUES
 (TRUE, FALSE, 1, 2),
 (TRUE, FALSE, 2, 5),
@@ -149,21 +133,18 @@ INSERT INTO Door (isInteractable, hasLoot, inRoom, toRoom) VALUES
 (TRUE, FALSE, 9, 10),
 (TRUE, FALSE, 10, 1);
 
--- Populate the InChest table
-INSERT INTO InChest (loot, chest) VALUES
+INSERT INTO InChest (lootID, chest) VALUES
 (2, 3), 
 (7, 1),
 (9, 5),
 (5, 8);
 
--- Populate the InShop table
-INSERT INTO InShop (loot, shop) VALUES
+INSERT INTO InShop (lootID, shop) VALUES
 (1, 4),
 (8, 7),
 (3, 5),
 (10, 6);
 
--- Populate the InPlayerInventory table
-INSERT INTO InPlayerInventory (loot, player) VALUES
+INSERT INTO InPlayerInventory (lootID, player) VALUES
 (4, 1),
 (6, 1);
