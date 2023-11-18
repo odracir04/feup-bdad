@@ -128,132 +128,221 @@ INSERT INTO Loot (name, value) VALUES
 ('Phoenix Feather', 118),
 ('Starlight Pendant', 128),
 ('Silvered Blade', 138),
-('Lost Reliquary', 148);
+('Lost Reliquary', 148),
+('Flaming Sword', 160),
+('Frostbite Axe', 170),
+('Thunderstrike Hammer', 180),
+('Venomous Dagger', 190),
+('Dragonfire Bow', 200),
+('Soul Reaver Scythe', 210),
+('Stormcaller Staff', 220),
+('Divine Rapier', 230),
+('Shadowblade Katana', 240),
+('Ethereal Lance', 250),
+('Healing Tonic', 70),
+('Mana Elixir', 75),
+('Stamina Potion', 80),
+('Invisibility Elixir', 85),
+('Strength Draught', 90),
+('Agility Tonic', 95),
+('Resistance Elixir', 100),
+('Speed Potion', 105),
+('Fortitude Elixir', 110),
+('Luck Elixir', 115);
 
 INSERT INTO Effect (cp_ADD, dp_ADD, hp_ADD, duration, onPlayer, onMonster) VALUES
-(5, 5, -10, 3, 1, NULL),
+(-5, -5, -10, 3, 1, NULL),
 (10, 10, 10, 5, NULL, NULL),
 (7, 7, 7, 4, NULL, NULL),
-(15, 15, 15, 6, NULL, 2),
-(8, 8, 8, 4, 1, 7),
+(15, 15, 15, 6, NULL, NULL),
+(-8, -8, -8, 4, NULL, NULL),
 (12, 12, 12, 6, NULL, NULL),
 (6, 6, 6, 3, NULL, NULL),
-(14, 14, 14, 7, NULL, 5),
-(9, 9, 9, 5, NULL, NULL),
+(14, 14, 14, 7, NULL, NULL),
+(-9, -9, -9, 5, NULL, NULL),
 (11, 11, 11, 6, NULL, NULL);
 
 INSERT INTO Weapon (lootID, durability, weaponType, attackType, cp_ADD, effect) VALUES
 (23, 100, 'Rod', 'Thunderbolt', 5, 1),
-(24, 100, 'Fang', 'Venomous', 7, 2),
-(26, 100, 'Knife', 'Sharp', 13, 4),
-(30, 100, 'Blade', 'Silvered', 20, 8);
+(24, 100, 'Fang', 'Venomous', 7, 5),
+(26, 100, 'Knife', 'Sharp', 13, 9),
+(30, 100, 'Blade', 'Silvered', 20, 1),
+(31, 100, 'Sword', 'Melee', 25, 5),
+(32, 90, 'Axe', 'Melee', 28, 5),
+(33, 95, 'Hammer', 'Melee', 30, 9),
+(34, 80, 'Dagger', 'Melee', 22, 1),
+(35, 85, 'Bow', 'Ranged', 27, 5),
+(36, 75, 'Scythe', 'Melee', 32, 1),
+(37, 85, 'Staff', 'Magic', 35, 9),
+(38, 90, 'Rapier', 'Melee', 33, 1),
+(39, 95, 'Katana', 'Melee', 30, 5),
+(40, 100, 'Lance', 'Melee', 28, 9);
 
 INSERT INTO Armor (lootID, durability, dp_ADD) VALUES
-(7, 100, 12),   -- Silver Locket (lootID 7)
-(12, 100, 8),   -- Platinum Bracelet (lootID 12)
-(19, 100, 15),  -- Obsidian Medallion (lootID 19)
-(22, 100, 10),  -- Frosty Crown (lootID 22)
-(3, 100, 6),    -- Enchanted Ring (lootID 3)
-(10, 100, 9),   -- Diamond Tiara (lootID 10)
-(27, 100, 13),  -- Gilded Crown (lootID 27)
-(14, 100, 7),   -- Moonstone Amulet (lootID 14)
-(16, 100, 11),  -- Ruby Pendant (lootID 16)
-(28, 100, 14),  -- Starlight Pendant (lootID 28)
-(21, 100, 5);   -- Crimson Scarf (lootID 21)
+(7, 100, 12),
+(12, 100, 8),
+(19, 100, 15),  
+(22, 100, 10),  
+(3, 100, 6),    
+(10, 100, 9),  
+(27, 100, 13),  
+(14, 100, 7),   
+(16, 100, 11),  
+(28, 100, 14),  
+(21, 100, 5);   
 
 INSERT INTO Potion (lootID, durability, effect) VALUES
-(11, 1, 5),
-(13, 1, 8);
+(11, 1, 2),
+(13, 1, 8),
+(41, 1, 6),
+(42, 1, 7),
+(43, 1, 4),
+(44, 1, 3),
+(45, 1, 6),
+(46, 1, 10),
+(47, 1, 7),
+(48, 1, 10),
+(49, 1, 8),
+(50, 1, 2);
 
 INSERT INTO Treasure (lootID) VALUES
-(2),  -- Shiny Gem (lootID 2)
-(4),  -- Mystic Scroll (lootID 4)
-(5),  -- Ancient Relic (lootID 5)
-(6),  -- Crystal Shard (lootID 6)
-(8),  -- Emerald Necklace (lootID 8)
-(9),  -- Sapphire Orb (lootID 9)
-(10),  -- Diamond Tiara (lootID 10)
-(14), -- Moonstone Amulet (lootID 14)
-(15), -- Celestial Key (lootID 15)
-(16), -- Ruby Pendant (lootID 16)
-(17), -- Ornate Brooch (lootID 17)
-(18), -- Iridescent Trinket (lootID 18)
-(19), -- Obsidian Medallion (lootID 19)
-(20), -- Elven Artefact (lootID 20)
-(30); -- Lost Reliquary (lootID 30)
+(2), 
+(4), 
+(5), 
+(6),  
+(8),  
+(9),  
+(10),  
+(14), 
+(15), 
+(16), 
+(17),
+(18), 
+(19), 
+(20), 
+(30); 
 
 INSERT INTO Chest (isInteractable, hasLoot, inRoom) VALUES
-(TRUE, TRUE, 1),
+(TRUE, TRUE, 2),
 (TRUE, TRUE, 2),
 (TRUE, TRUE, 3),
-(TRUE, TRUE, 4),
-(TRUE, TRUE, 5),
-(TRUE, TRUE, 6),
-(TRUE, TRUE, 7),
+(TRUE, TRUE, 3),
 (TRUE, TRUE, 8),
 (TRUE, TRUE, 9),
-(TRUE, TRUE, 10);
+(TRUE, TRUE, 9),
+(TRUE, TRUE, 9),
+(TRUE, TRUE, 10),
+(TRUE, TRUE, 10),
+(TRUE, TRUE, 11),
+(TRUE, TRUE, 12),
+(TRUE, TRUE, 12),
+(TRUE, TRUE, 12),
+(TRUE, TRUE, 13),
+(TRUE, TRUE, 13),
+(TRUE, TRUE, 11),
+(TRUE, TRUE, 15),
+(TRUE, TRUE, 17),
+(TRUE, TRUE, 17);
 
 INSERT INTO Decor (isInteractable, hasLoot, inRoom) VALUES
+(TRUE, FALSE, 1),
+(FALSE, FALSE, 2),
+(TRUE, FALSE, 3),
+(TRUE, FALSE, 4),
+(TRUE, FALSE, 5),
+(FALSE, FALSE, 6),
+(TRUE, FALSE, 7),
+(TRUE, FALSE, 8),
+(FALSE, FALSE, 9),
+(TRUE, FALSE, 10),
+(TRUE, FALSE, 11),
+(TRUE, FALSE, 12),
+(TRUE, FALSE, 13),
+(FALSE, FALSE, 14),
+(TRUE, FALSE, 15),
+(TRUE, FALSE, 16),
+(FALSE, FALSE, 17),
+(TRUE, FALSE, 18),
+(TRUE, FALSE, 19),
+(FALSE, FALSE, 20),
 (TRUE, FALSE, 1),
 (TRUE, FALSE, 2),
 (TRUE, FALSE, 3),
 (TRUE, FALSE, 4),
-(TRUE, FALSE, 5),
+(FALSE, FALSE, 5),
 (TRUE, FALSE, 6),
 (TRUE, FALSE, 7),
 (TRUE, FALSE, 8),
-(TRUE, FALSE, 9),
-(TRUE, FALSE, 10);
+(FALSE, FALSE, 9),
+(TRUE, FALSE, 10),
+(TRUE, FALSE, 11),
+(TRUE, FALSE, 12),
+(FALSE, FALSE, 13),
+(TRUE, FALSE, 14),
+(TRUE, FALSE, 15),
+(TRUE, FALSE, 16),
+(TRUE, FALSE, 17),
+(TRUE, FALSE, 18),
+(FALSE, FALSE, 19),
+(TRUE, FALSE, 20);
 
 INSERT INTO Door (isInteractable, hasLoot, inRoom, toRoom) VALUES
-(1, 0, 1, 5),   -- The Enchanted Forest -> Mystic Grove
-(1, 0, 1, 20),  -- The Enchanted Forest -> Starlight Citadel
-(1, 0, 1, 3),   -- The Enchanted Forest -> Cursed Crypt
-(1, 0, 1, 9),   -- The Enchanted Forest -> Lost Temple
-(1, 0, 5, 2),   -- Mystic Grove -> Dragons Lair
-(1, 0, 2, 8),   -- Dragons Lair -> Haunted Mansion
-(1, 0, 3, 12),  -- Cursed Crypt -> Eternal Abyss
-(1, 0, 4, 15),  -- Whispering Winds Inn -> Serenity Bay
-(1, 0, 5, 6),   -- Mystic Grove -> Pirates Cove
-(1, 0, 6, 14),  -- Pirates Cove -> Thunderpeak Summit
-(1, 0, 7, 19),  -- The Forbidden Library -> Emerald Vale
-(1, 0, 8, 6),   -- Haunted Mansion -> Pirates Cove
-(1, 0, 9, 10),  -- Lost Temple -> Crystal Cavern
-(1, 0, 10, 7),  -- Crystal Cavern -> The Forbidden Library
-(1, 0, 11, 20), -- Sands of Time -> Starlight Citadel
-(1, 0, 12, 17), -- Eternal Abyss -> Frostbite Peak
-(1, 0, 13, 4),  -- Moonlit Meadow -> Whispering Winds Inn
-(1, 0, 14, 11), -- Thunderpeak Summit -> Sands of Time
-(1, 0, 15, 18), -- Serenity Bay -> Aurora Falls
-(1, 0, 16, 13), -- Elysium Fields -> Moonlit Meadow
-(1, 0, 17, 16), -- Frostbite Peak -> Elysium Fields
-(1, 0, 18, 9),  -- Aurora Falls -> Lost Temple
-(1, 0, 19, 3);  -- Emerald Vale -> Cursed Crypt
+(TRUE, FALSE, 1, 5),   -- The Enchanted Forest -> Mystic Grove
+(TRUE, FALSE, 1, 20),  -- The Enchanted Forest -> Starlight Citadel
+(TRUE, FALSE, 1, 3),   -- The Enchanted Forest -> Cursed Crypt
+(TRUE, FALSE, 1, 9),   -- The Enchanted Forest -> Lost Temple
+(TRUE, FALSE, 5, 2),   -- Mystic Grove -> Dragons Lair
+(TRUE, FALSE, 2, 8),   -- Dragons Lair -> Haunted Mansion
+(TRUE, FALSE, 3, 12),  -- Cursed Crypt -> Eternal Abyss
+(TRUE, FALSE, 4, 15),  -- Whispering Winds Inn -> Serenity Bay
+(TRUE, FALSE, 5, 6),   -- Mystic Grove -> Pirates Cove
+(TRUE, FALSE, 6, 14),  -- Pirates Cove -> Thunderpeak Summit
+(TRUE, FALSE, 7, 19),  -- The Forbidden Library -> Emerald Vale
+(TRUE, FALSE, 8, 6),   -- Haunted Mansion -> Pirates Cove
+(TRUE, FALSE, 9, 10),  -- Lost Temple -> Crystal Cavern
+(TRUE, FALSE, 10, 7),  -- Crystal Cavern -> The Forbidden Library
+(TRUE, FALSE, 1, 20), -- Sands of Time -> Starlight Citadel
+(TRUE, FALSE, 12, 17), -- Eternal Abyss -> Frostbite Peak
+(TRUE, FALSE, 13, 4),  -- Moonlit Meadow -> Whispering Winds Inn
+(TRUE, FALSE, 14, 11), -- Thunderpeak Summit -> Sands of Time
+(TRUE, FALSE, 15, 18), -- Serenity Bay -> Aurora Falls
+(TRUE, FALSE, 16, 13), -- Elysium Fields -> Moonlit Meadow
+(TRUE, FALSE, 17, 16), -- Frostbite Peak -> Elysium Fields
+(TRUE, FALSE, 18, 9),  -- Aurora Falls -> Lost Temple
+(TRUE, FALSE, 19, 3);  -- Emerald Vale -> Cursed Crypt
 
 INSERT INTO InChest (lootID, chest)
 VALUES 
-(1, 3),  -- 'Gold Coin'
-(2, 1),  -- 'Shiny Gem'
+(1, 1),  -- 'Gold Coin'
+(2, 11),  -- 'Shiny Gem'
 (3, 5),  -- 'Enchanted Ring'
-(4, 8),  -- 'Mystic Scroll'
+(4, 18),  -- 'Mystic Scroll'
 (5, 9),  -- 'Ancient Relic'
-(6, 10), -- 'Crystal Shard'
+(6, 20), -- 'Crystal Shard'
 (7, 2),  -- 'Silver Locket'
-(8, 4),  -- 'Emerald Necklace'
+(8, 14),  -- 'Emerald Necklace'
 (9, 7),  -- 'Sapphire Orb'
-(10, 6), -- 'Diamond Tiara'
+(10, 16), -- 'Diamond Tiara'
 (11, 3), -- 'Glimmering Elixir'
-(12, 1), -- 'Platinum Bracelet'
+(12, 11), -- 'Platinum Bracelet'
 (13, 5), -- 'Ethereal Charm'
-(14, 8), -- 'Moonstone Amulet'
-(15, 9), -- 'Celestial Key'
+(14, 18), -- 'Moonstone Amulet'
+(15, 19), -- 'Celestial Key'
 (16, 10),-- 'Ruby Pendant'
-(17, 2), -- 'Ornate Brooch'
+(17, 12), -- 'Ornate Brooch'
 (18, 4), -- 'Iridescent Trinket'
 (19, 7), -- 'Obsidian Medallion'
 (20, 6), -- 'Elven Artefact'
-(21, 1); -- 'Crimson Scarf'
+(21, 1), -- 'Crimson Scarf'
+(31, 3), -- 'Flaming Sword'
+(32, 8), -- 'Frostbite Axe'
+(33, 5), -- 'Thunderstrike Hammer'
+(41, 13), -- 'Healing Tonic'
+(42, 15), -- 'Mana Elixir'
+(43, 17), -- 'Stamina Potion'
+(44, 12), -- 'Invisibility Elixir'
+(45, 17), -- 'Strength Draught'
+(46, 19); -- 'Agility Tonic'
 
 INSERT INTO InShop (lootID, shop)
 VALUES
@@ -263,9 +352,20 @@ VALUES
 (25, 7), -- 'Dragon Scale'
 (26, 16),-- 'Gilded Crown'
 (27, 14), -- 'Phoenix Feather'
-(28, 7); -- 'Starlight Pendant'
+(28, 7), -- 'Starlight Pendant'
+(34, 6), -- 'Venomous Dagger'
+(35, 16), -- 'Dragonfire Bow'
+(36, 14), -- 'Soul Reaver Scythe'
+(37, 7), -- 'Stormcaller Staff'
+(38, 4), -- 'Divine Rapier'
+(39, 5), -- 'Shadowblade Katana'
+(47, 5), -- 'Resistance Elixir'
+(49, 16), -- 'Fortitude Elixir'
+(50, 7); -- 'Luck Elixir'
 
 INSERT INTO InPlayerInventory (lootID, player)
 VALUES
 (29, 1), -- 'Silvered Blade'
-(30, 1); -- 'Lost Reliquary'
+(30, 1), -- 'Lost Reliquary'
+(40, 1), -- 'Ethereal Lance'
+(48, 1); -- 'Speed Potion'
