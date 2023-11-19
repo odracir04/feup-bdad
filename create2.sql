@@ -38,7 +38,7 @@ CREATE TABLE Shopkeeper (
 DROP TABLE IF EXISTS Monster;
 CREATE TABLE Monster (
     monsterID INTEGER CONSTRAINT monsterPK PRIMARY KEY,
-    name TEXT CONSTRAINT monsterNameExists NOT NULL CONSTRAINT monsterNameUnique UNIQUE,
+    name TEXT CONSTRAINT monsterNameExists NOT NULL,
     HP INTEGER CONSTRAINT monsterHPPositive CHECK (HP >= 0),
     CP INTEGER CONSTRAINT monsterCPPositive CHECK (CP >= 0),
     DP INTEGER CONSTRAINT monsterDPPositive CHECK (DP >= 0),
