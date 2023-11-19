@@ -1,5 +1,3 @@
-PRAGMA FOREIGN_KEYS = ON;
-
 .headers ON
 .mode columns
 PRAGMA FOREIGN_KEYS = ON;
